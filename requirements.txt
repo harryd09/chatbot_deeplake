@@ -1,0 +1,19 @@
+# Core LangChain and LLM dependencies
+langchain==0.0.208
+openai==0.27.8
+tiktoken==0.12.0
+
+# Vector database
+deeplake>=3.6.0,<4.0.0
+
+# Document loading and processing
+unstructured==0.18.31
+selenium==4.40.0
+
+# Utilities
+python-dotenv==1.0.0
+requests==2.32.5
+
+# Note: This project uses Python 3.11+
+# Install with: pip install -r requirements.txt
+# Or with uv: uv pip install -r requirements.txt

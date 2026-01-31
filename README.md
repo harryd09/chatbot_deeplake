@@ -14,7 +14,9 @@ This project demonstrates how to build a customer support chatbot that:
 
 - `load_data.py` - Scrapes URLs, creates embeddings, and stores them in DeepLake
 - `chat.py` - Loads the vector database and answers user queries
-- `pyproject.toml` - Project dependencies managed with uv
+- `requirements.txt` - Python dependencies for the project
+- `pyproject.toml` - Project configuration managed with uv
+- `.env` - Environment variables (create this file, see Setup section)
 
 ## Setup
 
@@ -30,10 +32,25 @@ This project demonstrates how to build a customer support chatbot that:
 1. Clone the repository and navigate to the project directory
 
 2. Create a virtual environment and install dependencies:
-```bash
-uv venv
-uv pip install langchain==0.0.208 deeplake openai==0.27.8 tiktoken unstructured selenium
-```
+
+   **Option A: Using uv (recommended)**
+   ```bash
+   uv venv
+   uv pip install -r requirements.txt
+   ```
+
+   **Option B: Using pip**
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+
+   **Option C: Using uv with individual packages**
+   ```bash
+   uv venv
+   uv pip install langchain==0.0.208 "deeplake>=3.6.0,<4.0.0" openai==0.27.8 tiktoken unstructured selenium python-dotenv requests
+   ```
 
 3. Create a `.env` file in the project root:
 ```bash
